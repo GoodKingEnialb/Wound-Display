@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<windowclass name="sub_ct_header_host" merge="join">
+		<script>
+			function onInit()
+				changeHealthDisplay();
+				if super and super.onInit then
+					super.onInit();
+				end
+			end
+			function changeHealthDisplay()
+				label_wounds.setTooltipText(Interface.getString("ct_tooltip_wounds"));
+				label_curhp.setTooltipText(Interface.getString("ct_tooltip_current"));
+			end
+		</script>
+		<sheetdata>
+			<!--add a new label for current hp-->
+			<label_ct_header_right name="label_curhp" insertbefore="label_init">
+				<static textres="ct_label_current_host" />
+				<tooltip textres="ct_tooltip_current" />
+			</label_ct_header_right>
+
+			<label_ct_header_right name="spacer_buttons_header_add" insertbefore="label_init">
+				<anchored width="40" />
+			</label_ct_header_right>
+
+			<label_ct_header_right name="spacer_buttons_header_add_temp" insertbefore="label_temp">
+				<anchored width="6" />
+			</label_ct_header_right>
+			
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<windowclass name="ct_entry" merge="join">
+			<script>
+			function onHealthChanged()
+				wounds.setMaxValue(hptotal.getValue());
+				curhp.setMaxValue(hptotal.getValue());
+				
+				local newCurrentHP = math.floor(hptotal.getValue() - wounds.getValue());
+				
+				if newCurrentHP ~= curhp.getValue() then
+					curhp.setValue(newCurrentHP);
+				end
+				
+				local sColor = ActorHealthManager.getHealthColor(ActorManager.resolveActor(getDatabaseNode()));
+				curhp.setColor(sColor);
+
+				super.onHealthChanged();
+			end
+		</script>
+
+		<sheetdata>
+			<number_ct_crosslink name="curhp" insertbefore="initresult">
+				<anchored to="rightanchor" width="30" height="20">
+					<top/>
+					<right anchor="left" relation="relative" offset="-10"/>
+				</anchored>
+				<tabtarget prev="initresult" next="hptotal"/>
+				<script>				
+					function onDrop(x,y,draginfo)
+						return true
+					end
+					
+					function onValueChanged()
+						local newWounds = math.floor(window.hptotal.getValue() - getValue());
+						
+						if newWounds ~= window.wounds.getValue() then
+							window.wounds.setValue(newWounds);
+						end
+					end
+				</script>
+			</number_ct_crosslink>
+			
+			<number_ct_crosslink name="wounds">
+			</number_ct_crosslink>
+			
+			<number_ct_crosslink name="hptotal">
+				<script>
+					function onDrop(x,y,draginfo)
+						return true
+					end
+
+					function onValueChanged()
+						if super and super.onValueChanged then
+							super.onValueChanged();
+						end
+						local sClass,_ = window.link.getValue();
+						if sClass == "charsheet" then
+							HpManager.recalculateAdjust(window.link.getTargetDatabaseNode());
+						end
+					end
+				</script>
+			</number_ct_crosslink>
+							
+			<number_ct_crosslink name="hptemp">
+			</number_ct_crosslink>
+			
+			<number_ct_crosslink name="initresult">
+				<anchored to="rightanchor" width="30" height="20">
+					<top />
+					<right anchor="left" relation="relative" offset="-10" />
+				</anchored>
+				<tabtarget prev="name" next="curhp"/>
+			</number_ct_crosslink>
+	
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,45 @@
+<root>
+	<windowclass name="sub_ct_header_client" merge="join">
+		<script>
+			function onInit()
+				super.onInit();
+				OptionsManager.registerCallback("SHPC", updateHealthDisplay);
+				OptionsManager.registerCallback("SHNPC", updateHealthDisplay);
+				updateHealthDisplay();
+			end
+			
+			function onClose()
+				OptionsManager.unregisterCallback("SHPC", updateHealthDisplay);
+				OptionsManager.unregisterCallback("SHNPC", updateHealthDisplay);
+			end
+			
+			function updateHealthDisplay(sOption)
+				local sOptSHPC = OptionsManager.getOption("SHPC");
+				local sOptSHNPC = OptionsManager.getOption("SHNPC");
+				local bShowDetail = (sOptSHPC == "detailed") or (sOptSHNPC == "detailed");
+				
+				label_hp.setVisible(bShowDetail);
+				label_temp.setVisible(bShowDetail);
+				label_wounds.setVisible(bShowDetail);
+				label_curhp.setVisible(bShowDetail);
+
+				label_status.setVisible(not bShowDetail);
+			end
+		</script>
+		<sheetdata>
+		
+			<!--add a new label for current hp-->
+			<label_ct_header_right name="label_curhp" insertbefore="label_init">
+				<static textres="ct_label_current" />
+				<tooltip textres="ct_tooltip_current" />
+			</label_ct_header_right>
+
+
+			<label_ct_header_right name="spacer_buttons_header_add_temp" insertbefore="label_temp">
+				<anchored width="8" />
+			</label_ct_header_right>
+			
+	
+		</sheetdata>
+	</windowclass>
+</root>

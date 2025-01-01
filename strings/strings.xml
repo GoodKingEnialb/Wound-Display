@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+	<string name="option_val_hp_wounds">Wounds</string>
+	<string name="option_val_hp_current">Current HP</string>
+
+	<string name="ct_label_max">Max</string>
+	<string name="ct_tooltip_max">Maximum Hit Points</string>
+	<string name="ct_label_current">Cur</string>
+	<string name="ct_label_current_host">Cur</string>
+	<string name="ct_tooltip_current">Current Hit Points</string>
+	
+</root>

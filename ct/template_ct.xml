@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<template name="number_clientct_curhp">
+		<number_ct_static name="curhp">
+				<anchored to="hptotal" width="30" height="20">
+					<top/>
+					<right anchor="left" offset="-50"/>
+				</anchored>
+				<script>
+				function onValueChanged()
+					window.onHealthChanged();
+				end
+				</script>
+		</number_ct_static>
+	</template>
+</root>

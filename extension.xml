@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	Fantasy Grounds is copyright SmiteWorks USA LLC, 2004-2021. All Rights Reserved.
+	
+	No core Fantasy Grounds files have been modified to create this extension
+
+	This work is Public Domain and may be used freely directly as-is, modified, or incorporated into another extension.
+-->
+
+<root release="1" version="2">
+	<properties>
+		<announcement text="Wound Display v1.2 for 5E by GKEnialb" font="emotefont" icon="GKElogo" />
+		<name>Feature: Wound Display</name>
+		<version>1.2</version>
+		<loadorder>250</loadorder>
+		<author>GKEnialb, based upon earlier versions of Constitutional Amendments by MeAndUnique-and-Tielc-and-Zuilin</author>
+		<description>Allows Wounds and Current HP to be displayed simultaneously in the CT and char sheet</description>
+
+		<ruleset>
+			<name>5E</name>
+		</ruleset>
+	</properties>
+
+	<base>
+		<!-- XML file containing new strings -->
+		<includefile source="strings/strings.xml" />
+		
+		<!-- icon -->
+		<icon name="GKElogo" file="graphics/icons/GKE_Logo.png" />	
+
+		<!-- updates the combat tracker to add support for max PC HP adjustments as well as toggling between wounds and current HP, for the host -->
+		<includefile source="ct/ct_host.xml" />
+		<includefile source="ct/ct_host_entry.xml" />
+		<includefile source="ct/ct_host_entry_section.xml" />
+
+		<!-- updates the combat tracker to add support for max PC HP adjustments as well as toggling between wounds and current HP, for the client -->
+		<includefile source="ct/template_ct.xml" />
+		<includefile source="ct/ct_client.xml" />
+		<includefile source="ct/ct_client_entry.xml" />
+
+	</base>
+</root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<windowclass name="ct_effect" merge="join">
+		<sheetdata>
+			<button_ct_effect_isactive name="isactive">
+            <script>
+                function onHealthChanged()
+                    wounds.setMaxValue(hptotal.getValue());
+                    curhp.setMaxValue(hptotal.getValue());
+                    
+                    local newCurrentHP = math.floor(hptotal.getValue() - wounds.getValue());
+                    
+                    if newCurrentHP ~= curhp.getValue() then
+                        curhp.setValue(newCurrentHP);
+                    end
+                    
+                    local sColor = ActorHealthManager.getHealthColor(ActorManager.resolveActor(getDatabaseNode()));
+                    curhp.setColor(sColor);
+
+                    super.onHealthChanged();
+                end
+            </script>
+			</button_ct_effect_isactive>
+		</sheetdata>
+	</windowclass>
+</root>
