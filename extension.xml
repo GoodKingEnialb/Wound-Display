@@ -14,7 +14,7 @@
 		<name>Feature: Wound Display</name>
 		<version>1.2</version>
 		<loadorder>250</loadorder>
-		<author>GKEnialb, based upon earlier versions of Constitutional Amendments by MeAndUnique-and-Tielc-and-Zuilin</author>
+		<author>GKEnialb, based upon earlier versions of Constitutional Amendments by Farratto, MeAndUnique, Tielc, and Zuilin</author>
 		<description>Allows Wounds and Current HP to be displayed simultaneously in the CT and char sheet</description>
 
 		<ruleset>
