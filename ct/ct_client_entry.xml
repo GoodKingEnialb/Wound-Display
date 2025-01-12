@@ -10,10 +10,16 @@
 				</anchored>
 			</base_clientct_health>
 			<string_clientct_status name="status" insertbefore="initresult" />
-			<number_clientct_curhp name="curhp" insertbefore="initresult" />
-			<number_clientct_wounds name="wounds" insertbefore="initresult" />
-			<number_clientct_hp name="hptotal" insertbefore="initresult" />
-			<number_clientct_hptemp name="hptemp" insertbefore="initresult" />
+			<number_clientct_curhp name="curhp" insertbefore="initresult" /> 
+			<!-- <number_clientct_curhp name="curhp" insertbefore="status"> 
+			<anchored to="healthbase" width="30" height="20">
+					<top />
+					<right />
+			</anchored>
+			</number_clientct_curhp> -->
+			<!-- <number_clientct_wounds name="wounds" insertbefore="initresult" /> -->
+			<!-- <number_clientct_hp name="hptotal" insertbefore="initresult" /> -->
+			<!-- <number_clientct_hptemp name="hptemp" insertbefore="initresult" /> -->
 
 		</sheetdata>
 	</windowclass>

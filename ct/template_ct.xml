@@ -4,7 +4,7 @@
 		<number_ct_static name="curhp">
 				<anchored to="hptotal" width="30" height="20">
 					<top/>
-					<right anchor="left" offset="-50"/>
+					<right anchor="left" offset="-15"/>
 				</anchored>
 				<script>
 				function onValueChanged()

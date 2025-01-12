@@ -8,13 +8,13 @@
 	This work is Public Domain and may be used freely directly as-is, modified, or incorporated into another extension.
 -->
 
-<root release="1" version="2">
+<root release="1" version="3">
 	<properties>
 		<announcement text="Wound Display v1.2 for 5E by GKEnialb" font="emotefont" icon="GKElogo" />
 		<name>Feature: Wound Display</name>
-		<version>1.2</version>
+		<version>1.3</version>
 		<loadorder>250</loadorder>
-		<author>GKEnialb, based upon earlier versions of Constitutional Amendments by Farratto, MeAndUnique, Tielc, and Zuilin</author>
+		<author>GKEnialb, based upon earlier versions of Constitutional Amendments by Farratto, rhagelstrom, MeAndUnique, Tielc, and Zuilin</author>
 		<description>Allows Wounds and Current HP to be displayed simultaneously in the CT and char sheet</description>
 
 		<ruleset>

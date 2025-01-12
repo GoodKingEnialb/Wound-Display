@@ -21,10 +21,10 @@
 			</label_ct_header_right>
 
 			<label_ct_header_right name="spacer_buttons_header_add" insertbefore="label_init">
-				<anchored width="40" />
+				<anchored width="20" />
 			</label_ct_header_right>
 
-			<label_ct_header_right name="spacer_buttons_header_add_temp" insertbefore="label_temp">
+			<label_ct_header_right name="spacer_buttons_header_add_temp" insertbefore="label_wounds">
 				<anchored width="6" />
 			</label_ct_header_right>
 			
